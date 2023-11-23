@@ -5,12 +5,12 @@ from werkzeug.exceptions import abort
 
 from appeliculas.db import get_db
 
-bp = Blueprint('language', __name__,url_prefix="/lenguaje/")
+bp = Blueprint('category', __name__,url_prefix="/category/")
 
 @bp.route('/')
 def index():
     db = get_db()
-    language = db.execute(
-        """SELECT name  FROM language """
+    category = db.execute(
+        """SELECT c.name AS categorias FROM category c """
     ).fetchall()
-    return render_template('language/index.html', language= language)
+    return render_template('category/index.html', category = category)

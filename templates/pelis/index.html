@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block header %}
+<h1>{% block title %}Categorias{% endblock %}</h1>
+{% endblock %} {% block content %} {% for cat in category %}
+<article class="post">
+  <header>
+    <div>
+      <h1>{{ cat['categorias'] }}</h1>
+      <div class="about"></div>
+    </div>
+  </header>
+  <p class="body"></p>
+</article>
+{% if not loop.last %}
+<hr />
+{% endif %} {% endfor %} {% endblock %}
