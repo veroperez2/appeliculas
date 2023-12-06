@@ -1,0 +1,12 @@
+<article class="post">
+  <header>
+    <div>
+      <h1>{{ actor['nombre'] }} {{actor['apellido'] }}</h1>
+      <h1>
+        <a href="{{url_for('actor.get_actor', id= actor['actor_id'])}}"
+          >{{ actor['nombre'] }} {{actor['apellido'] }}</a
+        >
+      </h1>
+    </div>
+  </header>
+</article>
