@@ -35,7 +35,7 @@ def create_app(test_config=None):
 
     from . import pelis
     app.register_blueprint(pelis.bp)
-    app.add_url_rule('/', endpoint='index')
+    app.add_url_rule('/', endpoint='pelis.index')
 
 
     from . import category

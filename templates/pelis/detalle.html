@@ -1,0 +1,15 @@
+<h1>titulo: {{ pelicula['titulo'] }}</h1>
+<h1>Nombre actor: {{ actor['nombre'] }} {{ actor['apellido'] }}</h1>
+{% for peli in peliculas %}
+<article class="post">
+  <header>
+    <div>
+      <h1>
+        <a href="{{url_for('pe.detalle', id=peli['film_id'])}}"
+          >{{ peli['pelicula'] }}</a
+        >
+      </h1>
+    </div>
+  </header>
+</article>
+{% endfor %}

@@ -13,13 +13,12 @@ bp = Blueprint('pelis', __name__,url_prefix="/pelis/")
 def index():
     db = get_db()
     peliculas = db.execute(
-        """SELECT f.title AS titulo FROM film f """
-    ).fetchall()
-    return render_template('pelis/index.html', peliculas=peliculas)
-    
-
-
+       
 """ SELECT f.title as pelicula, f.film_id FROM film f
             join film_actor fa on f.film_id = fa.film_id 
             join actor a on fa.actor_id = a.actor_id
             WHERE a.actor_id = ?"""  
+    ).fetchall()
+    return render_template('pelis/.html', peliculas=peliculas)
+    
+
