@@ -28,10 +28,13 @@ def create_app(test_config=None):
     # a simple page that says hello
     @app.route('/hello')
     def hello():
-        return 'Hello, World!'
+        return 'Hello, World!' 
     
-    from . import peliculas
-    app.register_blueprint(peliculas.bp)
+    from . import db
+    db.init_app(app)
+
+    from . import pelis
+    app.register_blueprint(pelis.bp)
     app.add_url_rule('/', endpoint='index')
 
 
@@ -39,8 +42,8 @@ def create_app(test_config=None):
     app.register_blueprint(category.bp)
 
 
-    from . import language
-    app.register_blueprint(language.bp)
+    from . import lenguaje
+    app.register_blueprint(lenguaje.bp)
 
 
     return app
